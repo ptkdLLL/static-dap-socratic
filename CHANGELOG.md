@@ -1,3 +1,10 @@
+## 2.0.6-fallback — 2026-11-11
+
+- Remove static reasoning from the runtime DAP fallback chain.
+- If sandbox logs/probes/unit tests/logcat/DB/UI cannot provide the fact, stop and report to the user with what is missing and what is needed.
+- Static reasoning is only for hypotheses/D-level inference, never runtime evidence.
+- No code behavior changes.
+
 ## 2.0.5-sanitize — 2026-11-11
 
 - Replace a project-specific thread name in `docs/dap-spec.md` with the generic `worker`.
