@@ -1,4 +1,4 @@
-# 事实驱动编程（static-dap-socratic 2.0.7-dap-libs）
+# 事实驱动编程（static-dap-socratic 2.0.8-case-study）
 
 给 AI 编程助手用的阶段式事实/证据工作流：一次只发当前阶段，收到阶段报告后进入下一阶段。
 

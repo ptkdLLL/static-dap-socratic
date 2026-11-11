@@ -1,3 +1,8 @@
+## 2.0.8-case-study — 2026-11-11
+
+- Add a desensitized real-task case study: PDF subsystem repair, with methodology summary, flow, and report screenshots on the homepage.
+- No code behavior changes.
+
 ## 2.0.7-dap-libs — 2026-11-11
 
 - Add the DAP dependency stack and limitation attribution: CodeLLDB/LLDB, debugpy, Node Inspector/CDP, native JDWP/JVMTI, netcoredbg, esbuild/tsx.

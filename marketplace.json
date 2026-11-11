@@ -4,7 +4,7 @@
     {
       "name": "static-dap-socratic",
       "source": "./plugin/static-dap-socratic",
-      "version": "2.0.7-dap-libs",
+      "version": "2.0.8-case-study",
       "description": "事实驱动编程：阶段式事实/证据工作流。一次只发当前阶段，报告交接后进入下一阶段。",
       "displayName": "事实驱动编程",
       "category": "developer-tools"

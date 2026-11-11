@@ -3,7 +3,7 @@
 给 AI 编程助手用的阶段式事实/证据工作流：把复杂任务拆成六步，一次只做一步；每一步交一份报告，插件再发下一步。
 
 - 插件 ID：`static-dap-socratic`（保持不变，避免破坏安装与 Skill 引用）
-- 版本：`2.0.7-dap-libs`
+- 版本：`2.0.8-case-study`
 - 配套 Skill：`plugin/static-dap-socratic/skills/static-dap-socratic/SKILL.md`
 - 许可证：MIT
 
@@ -70,6 +70,20 @@ AI 编程助手常见四个毛病：
 - **允许写“未验证”**：没有证据的项明确标出来，而不是包装成“全部通过”。
 - **不打断工作**：插件不拦截操作、不弹审批，只在阶段边界交接。
 
+## 实战案例：一次 PDF 子系统级修复
+
+以下是一份实际跑完的方法论总结（已脱敏）。它展示了工作流在真实任务中的产出：先定位根因，再用最小探针验证平台假设，逐块评估后落码，最后在真机上按状态迁移矩阵验收。
+
+![方法论报告：摘要与适用范围](docs/images/case-study-pdf-methodology-1.png)
+
+*图 1：报告摘要、适用范围与脱敏说明。*
+
+![方法论目标与总体流程](docs/images/case-study-pdf-methodology-2.png)
+
+*图 2：方法论目标与总体流程。*
+
+完整文字版：[docs/case-study-pdf-subsystem.md](docs/case-study-pdf-subsystem.md)
+
 ## 工作循环
 
 1. 读当前阶段提示；
@@ -104,6 +118,7 @@ python3 <plugin-root>/scripts/handoff.py --report REPORT-xxx.md --token <current
 - [介绍：设计思想、使用方法、优势](docs/introduction.md)
 - [两次真实任务的脱敏案例](docs/field-notes-two-tasks.md)
 - [DAP 设计规范与当前限制](docs/dap-spec.md)
+- [实战案例：PDF 子系统级修复（脱敏）](docs/case-study-pdf-subsystem.md)
 
 ## 许可证
 
