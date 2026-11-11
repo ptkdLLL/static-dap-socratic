@@ -1,8 +1,18 @@
-# static-dap-socratic (2.0 report handshake)
+# 事实驱动编程（static-dap-socratic 2.0.1-fact-driven）
 
-A staged workflow plugin for the static+DAP methodology. It injects one stage at a time, records stage reports, and advances only after a report handoff.
+给 AI 编程助手用的阶段式事实/证据工作流：一次只发当前阶段，收到阶段报告后进入下一阶段。
 
-Dormant by default; activated when the user prompt contains the activation phrase.
+默认休眠；用户消息包含触发词时激活。
+
+## 如何触发
+
+在给 AI 的任务描述里包含：
+
+```text
+基于静态工具与dap联合
+```
+
+没有这句话不会触发。
 
 ## 工作方式
 

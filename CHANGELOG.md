@@ -1,3 +1,9 @@
+## 2.0.1-fact-driven — 2026-11-11
+
+- Public Chinese name: 事实驱动编程.
+- README: prominent activation instructions.
+- No code changes; display name and documentation update.
+
 # Changelog
 
 ## 2.0.0-report-handoff — 2026-11-11

@@ -20,9 +20,9 @@ Restart ZCode after installation so hooks and the skill reload.
 Copy the plugin into the installed cache:
 
 ```sh
-mkdir -p ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.0-report-handoff
+mkdir -p ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.1-fact-driven
 rsync -a --delete ./plugin/static-dap-socratic/ \
-  ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.0-report-handoff/
+  ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.1-fact-driven/
 ```
 
 Then point the plugin entry in `~/.zcode/cli/plugins/installed_plugins.json` at that path and make sure the plugin is enabled in `~/.zcode/cli/config.json`. Restart ZCode.
@@ -45,7 +45,7 @@ The plugin injects stage 1 on `UserPromptSubmit`.
 4. Run:
 
 ```sh
-python3 ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.0-report-handoff/scripts/handoff.py \
+python3 ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.1-fact-driven/scripts/handoff.py \
   --report REPORT-xxx.md \
   --token <current-stage-token>
 ```

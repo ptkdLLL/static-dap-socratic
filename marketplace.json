@@ -4,9 +4,9 @@
     {
       "name": "static-dap-socratic",
       "source": "./plugin/static-dap-socratic",
-      "version": "2.0.0-report-handoff",
-      "description": "Staged report-handshake supervisor for the static+DAP methodology: one stage prompt at a time, report-carried handoff, no semantic gates.",
-      "displayName": "Static + DAP Socratic",
+      "version": "2.0.1-fact-driven",
+      "description": "事实驱动编程：阶段式事实/证据工作流。一次只发当前阶段，报告交接后进入下一阶段。",
+      "displayName": "事实驱动编程",
       "category": "developer-tools"
     }
   ]

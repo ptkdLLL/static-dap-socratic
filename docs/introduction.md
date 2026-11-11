@@ -1,7 +1,8 @@
-# 静态工具 + DAP 助手（2.0）
+# 事实驱动编程（2.0.1）
 
 > 给 AI 编程助手用的“阶段任务书 + 阶段报告”工具  
-> 版本：`static-dap-socratic 2.0.0-report-handoff`
+> 版本：`static-dap-socratic 2.0.1-fact-driven`  
+> 触发词：`基于静态工具与dap联合`
 
 ---
 
