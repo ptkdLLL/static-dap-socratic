@@ -1,4 +1,4 @@
-# 事实驱动编程（static-dap-socratic 2.0.3-requirements）
+# 事实驱动编程（static-dap-socratic 2.0.4-dap-spec）
 
 给 AI 编程助手用的阶段式事实/证据工作流：一次只发当前阶段，收到阶段报告后进入下一阶段。
 
@@ -18,6 +18,7 @@
 
 - `codebase_memory` MCP：提供代码索引、符号、调用关系、数据形状；
 - DAP MCP：提供实际运行值、线程、分支、生命周期；
+- DAP 规范与当前限制：https://github.com/ptkdLLL/static-dap-socratic/blob/main/docs/dap-spec.md
 - Python 3 + ZCode 插件 hooks。
 
 插件不包含、也不安装这些 MCP 服务；没有它们，工作流只剩阶段提示，不能提供事实约束。

@@ -3,7 +3,7 @@
 给 AI 编程助手用的阶段式事实/证据工作流：把复杂任务拆成六步，一次只做一步；每一步交一份报告，插件再发下一步。
 
 - 插件 ID：`static-dap-socratic`（保持不变，避免破坏安装与 Skill 引用）
-- 版本：`2.0.3-requirements`
+- 版本：`2.0.4-dap-spec`
 - 配套 Skill：`plugin/static-dap-socratic/skills/static-dap-socratic/SKILL.md`
 - 许可证：MIT
 
@@ -18,6 +18,8 @@
 | Python 3 + ZCode 插件系统 | 运行 hook、handoff、报告归档 | 插件无法加载 |
 
 最小检查：能调用 `codebase_memory.index_repository` / `search_graph`，能调用 `dap.capabilities` / `dap.start`。缺一个，先配置 MCP，再激活。
+
+DAP 的具体能力契约、当前实现状态和已知限制（尤其 Android/ART/JDWP 断点限制）见 **[docs/dap-spec.md](docs/dap-spec.md)**。
 
 ## 如何触发
 
@@ -101,6 +103,7 @@ python3 <plugin-root>/scripts/handoff.py --report REPORT-xxx.md --token <current
 
 - [介绍：设计思想、使用方法、优势](docs/introduction.md)
 - [两次真实任务的脱敏案例](docs/field-notes-two-tasks.md)
+- [DAP 设计规范与当前限制](docs/dap-spec.md)
 
 ## 许可证
 

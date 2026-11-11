@@ -1,3 +1,9 @@
+## 2.0.4-dap-spec — 2026-11-11
+
+- Add `docs/dap-spec.md`: required DAP MCP contract, current capability matrix, known limitations (including Android/ART/JDWP), evidence rules, and fallback guidance.
+- Link the DAP spec from README, INSTALL, plugin README, and introduction.
+- No code behavior changes.
+
 ## 2.0.3-requirements — 2026-11-11
 
 - Document the hard prerequisites: codebase_memory MCP and DAP MCP.

@@ -1,9 +1,10 @@
-# 事实驱动编程（2.0.3-requirements）
+# 事实驱动编程（2.0.4-dap-spec）
 
 > 给 AI 编程助手用的“阶段任务书 + 阶段报告”工具  
-> 版本：`static-dap-socratic 2.0.3-requirements`  
+> 版本：`static-dap-socratic 2.0.4-dap-spec`  
 > 触发词：`基于静态工具与dap联合`  
-> 前置条件：`codebase_memory` MCP + DAP MCP；插件本身不生产事实。
+> 前置条件：`codebase_memory` MCP + DAP MCP；插件本身不生产事实。  
+> DAP 规范与当前限制：[docs/dap-spec.md](dap-spec.md)
 
 ---
 
