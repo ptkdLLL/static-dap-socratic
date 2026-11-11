@@ -81,6 +81,23 @@ DAP 回答“代码实际怎么跑”：实际参数/字段、线程/调用栈�
 - attach 会话停止时默认不杀目标（除非显式要求）；
 - `continue` 超时、JDWP 断开、adapter 退出都要有明确错误，不伪装成“命中”。
 
+### 2.6 底层依赖栈与限制归因
+
+插件本身不捆绑 DAP 实现；它调用外部 MCP/工具，底层是这些现成的 adapter、库与协议：
+
+| backend | 底层 adapter / 库 | 协议 | 限制主要来自 |
+|---|---|---|---|
+| lldb | CodeLLDB（codelldb）+ LLDB | DAP over TCP | LLDB/CodeLLDB：attach、断点 resolve 竞态、DWARF/源码名匹配、异常过滤 |
+| python | debugpy | DAP over stdio | debugpy：attach 握手、单行循环 pause 事件 |
+| node | Node Inspector / V8 + Chrome DevTools Protocol | WebSocket | CDP/Node Inspector：函数断点需启发式、主线程模型、输出延迟 |
+| java | 原生 JDWP 客户端（无外部 adapter） | JDWP over TCP | JVM/ART 的 JDWP/JVMTI：`CLASS_PREPARE`、已加载类、`LocalVariableTable`、无通用 eval |
+| cs | netcoredbg | DAP over stdio | netcoredbg：pause/attach、单次命中限制 |
+| TS | node 后端 + esbuild（可选 tsx） | CDP + source map | esbuild/tsx 与 source map：行映射精度 |
+| Android | `adb forward` + ART JDWP agent | JDWP over TCP | ART 的 JDWP/JVMTI 实现：已加载类断点、pause 帧、eval |
+| native Android | LLDB/CodeLLDB + lldb-server（未作为默认验证路径） | DAP/LLDB | 符号、ptrace、attach 环境 |
+
+这些是外部依赖，不是插件自带；`dap_capabilities` 声明的是这些 adapter 的当前能力。下面列的限制大多继承自这些 adapter/协议，不是插件新增的语义；插件只负责调用、记录和标注。
+
 ---
 
 ## 3. 当前实现能力矩阵
@@ -125,13 +142,15 @@ DAP 回答“代码实际怎么跑”：实际参数/字段、线程/调用栈�
 4. 用 logpoint/条件断点降低停点数量，但仍要检查 `hitBreakpoints`；
 5. 用沙盒日志/最小 probe 替代，并明确标注替代证据。
 
-### 4.2 其他后端限制
+### 4.2 其他后端限制（来自底层 adapter/协议）
 
-- **lldb**：attach 常不可用/超时；launch 可用；快程序有断点 resolve 竞态；头文件/宏展开行可能不 resolve；同名源文件（如 `mod.rs`）会全部绑定；`all` 异常过滤有限制；Rust panic 行可能偏移。
-- **java（JVM）**：vars 需要 `-g`；eval 是迷你文法（字面量/局部变量/简单算术/比较），不是通用表达式；attach 场景 vars 可能为空；断点行吸附可能导致 codeIndex 偏移。
-- **cs**：pause 不可用；attach 不可用；logpoint/hitCondition 受 netcoredbg 单次命中限制。
-- **python**：单行 `while`/`sleep` 循环 pause 可能不触发 stopped 事件（程序已暂停但事件缺失）；attach 需要 debugpy `--wait-for-client`；`raised` 异常过滤会停在解释器内部异常。
-- **node**：函数断点是源码定位启发式，方法/闭包不保证；threads 只有主线程；崩溃输出有秒级延迟。
+以下限制大多来自上一节的 adapter/协议，不是插件新增的语义。
+
+- **lldb（CodeLLDB/LLDB）**：attach 常不可用/超时；launch 可用；快程序有断点 resolve 竞态；头文件/宏展开行可能不 resolve；同名源文件（如 `mod.rs`）会全部绑定；`all` 异常过滤有限制；Rust panic 行可能偏移。
+- **java（JDWP/JVMTI）**：vars 需要 `-g`；eval 是迷你文法（字面量/局部变量/简单算术/比较），不是通用表达式；attach 场景 vars 可能为空；断点行吸附可能导致 codeIndex 偏移。
+- **cs（netcoredbg）**：pause 不可用；attach 不可用；logpoint/hitCondition 受 netcoredbg 单次命中限制。
+- **python（debugpy）**：单行 `while`/`sleep` 循环 pause 可能不触发 stopped 事件（程序已暂停但事件缺失）；attach 需要 debugpy `--wait-for-client`；`raised` 异常过滤会停在解释器内部异常。
+- **node（CDP/Node Inspector）**：函数断点是源码定位启发式，方法/闭包不保证；threads 只有主线程；崩溃输出有秒级延迟。
 - **通用**：DAP 停顿会改变时序，不能当性能测量；优化/裁剪构建、source map、远程/容器环境都可能改变断点行为。
 
 ---

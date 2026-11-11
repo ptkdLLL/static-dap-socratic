@@ -1,3 +1,9 @@
+## 2.0.7-dap-libs — 2026-11-11
+
+- Add the DAP dependency stack and limitation attribution: CodeLLDB/LLDB, debugpy, Node Inspector/CDP, native JDWP/JVMTI, netcoredbg, esbuild/tsx.
+- Clarify that the documented limitations mostly come from these adapters/protocols, not from plugin-added semantics.
+- No code behavior changes.
+
 ## 2.0.6-fallback — 2026-11-11
 
 - Remove static reasoning from the runtime DAP fallback chain.

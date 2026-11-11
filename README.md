@@ -3,7 +3,7 @@
 给 AI 编程助手用的阶段式事实/证据工作流：把复杂任务拆成六步，一次只做一步；每一步交一份报告，插件再发下一步。
 
 - 插件 ID：`static-dap-socratic`（保持不变，避免破坏安装与 Skill 引用）
-- 版本：`2.0.6-fallback`
+- 版本：`2.0.7-dap-libs`
 - 配套 Skill：`plugin/static-dap-socratic/skills/static-dap-socratic/SKILL.md`
 - 许可证：MIT
 
@@ -19,7 +19,7 @@
 
 最小检查：能调用 `codebase_memory.index_repository` / `search_graph`，能调用 `dap.capabilities` / `dap.start`。缺一个，先配置 MCP，再激活。
 
-DAP 的具体能力契约、当前实现状态和已知限制（尤其 Android/ART/JDWP 断点限制）见 **[docs/dap-spec.md](docs/dap-spec.md)**。
+DAP 的具体能力契约、底层依赖库（CodeLLDB/LLDB、debugpy、Node Inspector/CDP、原生 JDWP、netcoredbg）、当前实现状态和已知限制（尤其 Android/ART/JDWP 断点限制）见 **[docs/dap-spec.md](docs/dap-spec.md)**。
 
 ## 如何触发
 
