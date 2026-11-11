@@ -1,0 +1,10 @@
+{
+  "name": "static-dap-socratic",
+  "version": "2.0.0-report-handoff",
+  "description": "Staged report-handshake supervisor for the static+DAP methodology: one stage prompt at a time, report-carried handoff, no semantic gates. Dormant until the activation phrase.",
+  "author": {
+    "name": "ptkdLLL"
+  },
+  "skills": "./skills",
+  "hooks": "./hooks/hooks.json"
+}

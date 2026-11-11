@@ -1,0 +1,13 @@
+{
+  "name": "static-dap-socratic",
+  "plugins": [
+    {
+      "name": "static-dap-socratic",
+      "source": "./plugin/static-dap-socratic",
+      "version": "2.0.0-report-handoff",
+      "description": "Staged report-handshake supervisor for the static+DAP methodology: one stage prompt at a time, report-carried handoff, no semantic gates.",
+      "displayName": "Static + DAP Socratic",
+      "category": "developer-tools"
+    }
+  ]
+}
