@@ -109,7 +109,7 @@ DAP 回答“代码实际怎么跑”：实际参数/字段、线程/调用栈�
 
 在 Android 真机/模拟器测试中，Java DAP 后端的实际表现：
 
-- **attach 可以成功**，`threads` 能看到 `main`、`cs-core`、`DefaultDispatcher-*` 等线程；
+- **attach 可以成功**，`threads` 能看到 `main`、`worker`、`DefaultDispatcher-*` 等线程；
 - 但对**已加载**的 Kotlin/Java 类，函数断点、行断点经常不命中；`String.length` 这类基础方法断点也可能不命中；
 - Java 函数断点依赖 `CLASS_PREPARE`：类首次加载时才能挂起；已经加载的类不会再触发；
 - `pause` 可能返回 `stopped`，但 `stack` 为空；此时 `vars`/`eval` 报 `no frame`，`step` 报 `no thread`；

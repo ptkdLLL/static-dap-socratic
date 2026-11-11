@@ -1,3 +1,8 @@
+## 2.0.5-sanitize — 2026-11-11
+
+- Replace a project-specific thread name in `docs/dap-spec.md` with the generic `worker`.
+- No code or behavior changes.
+
 ## 2.0.4-dap-spec — 2026-11-11
 
 - Add `docs/dap-spec.md`: required DAP MCP contract, current capability matrix, known limitations (including Android/ART/JDWP), evidence rules, and fallback guidance.
