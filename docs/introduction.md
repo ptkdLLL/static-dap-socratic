@@ -1,8 +1,9 @@
-# 事实驱动编程（2.0.2-isolation）
+# 事实驱动编程（2.0.3-requirements）
 
 > 给 AI 编程助手用的“阶段任务书 + 阶段报告”工具  
-> 版本：`static-dap-socratic 2.0.2-isolation`  
-> 触发词：`基于静态工具与dap联合`
+> 版本：`static-dap-socratic 2.0.3-requirements`  
+> 触发词：`基于静态工具与dap联合`  
+> 前置条件：`codebase_memory` MCP + DAP MCP；插件本身不生产事实。
 
 ---
 

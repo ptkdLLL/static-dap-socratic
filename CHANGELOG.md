@@ -1,3 +1,9 @@
+## 2.0.3-requirements — 2026-11-11
+
+- Document the hard prerequisites: codebase_memory MCP and DAP MCP.
+- Clarify that the plugin does not produce facts and does not install MCP servers.
+- No code behavior changes.
+
 ## 2.0.2-isolation — 2026-11-11
 
 - Remove the stage table and stage names from the installed plugin README.

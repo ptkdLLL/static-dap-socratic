@@ -3,9 +3,21 @@
 给 AI 编程助手用的阶段式事实/证据工作流：把复杂任务拆成六步，一次只做一步；每一步交一份报告，插件再发下一步。
 
 - 插件 ID：`static-dap-socratic`（保持不变，避免破坏安装与 Skill 引用）
-- 版本：`2.0.2-isolation`
+- 版本：`2.0.3-requirements`
 - 配套 Skill：`plugin/static-dap-socratic/skills/static-dap-socratic/SKILL.md`
 - 许可证：MIT
+
+## 前置条件（必须）
+
+这个插件**不生产事实**。事实来自外部工具；没有这些工具，它只是一个阶段提示器，不是“事实驱动”。
+
+| 能力 | 用途 | 缺失后果 |
+|---|---|---|
+| `codebase_memory` MCP | 全局代码索引、符号、调用关系、数据形状 | 只能靠 grep/读文件，容易把全局问题看成局部片段 |
+| DAP MCP | 调试器：实际运行值、线程、分支、生命周期 | 运行时契约只能靠日志/测试/探针，相关结论必须标 `UNVERIFIED` |
+| Python 3 + ZCode 插件系统 | 运行 hook、handoff、报告归档 | 插件无法加载 |
+
+最小检查：能调用 `codebase_memory.index_repository` / `search_graph`，能调用 `dap.capabilities` / `dap.start`。缺一个，先配置 MCP，再激活。
 
 ## 如何触发
 

@@ -1,5 +1,16 @@
 # Install / Activate / Uninstall
 
+## 0. 前置条件（必须）
+
+本插件不包含、也不安装 MCP 服务。它依赖外部事实工具：
+
+- `codebase_memory` MCP：代码索引、符号、调用关系、数据形状；
+- DAP MCP：实际运行值、线程、分支、生命周期；
+- Python 3 + ZCode 插件系统。
+
+缺 `codebase_memory`：静态证据只剩 grep/读文件；缺 DAP：运行时证据只能靠日志/测试/探针，相关项必须标 `UNVERIFIED`；两者都缺：只能当阶段提示器用，不能称为事实驱动。
+
+
 ## 1. Recommended: add this repository as a local marketplace
 
 This repository root is a local marketplace:
@@ -20,9 +31,9 @@ Restart ZCode after installation so hooks and the skill reload.
 Copy the plugin into the installed cache:
 
 ```sh
-mkdir -p ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.2-isolation
+mkdir -p ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.3-requirements
 rsync -a --delete ./plugin/static-dap-socratic/ \
-  ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.2-isolation/
+  ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.3-requirements/
 ```
 
 Then point the plugin entry in `~/.zcode/cli/plugins/installed_plugins.json` at that path and make sure the plugin is enabled in `~/.zcode/cli/config.json`. Restart ZCode.
@@ -45,7 +56,7 @@ The plugin injects stage 1 on `UserPromptSubmit`.
 4. Run:
 
 ```sh
-python3 ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.2-isolation/scripts/handoff.py \
+python3 ~/.zcode/cli/plugins/cache/static-dap-socratic/static-dap-socratic/2.0.3-requirements/scripts/handoff.py \
   --report REPORT-xxx.md \
   --token <current-stage-token>
 ```
