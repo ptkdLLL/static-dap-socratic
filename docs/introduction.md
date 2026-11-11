@@ -1,7 +1,7 @@
-# 事实驱动编程（2.0.1）
+# 事实驱动编程（2.0.2-isolation）
 
 > 给 AI 编程助手用的“阶段任务书 + 阶段报告”工具  
-> 版本：`static-dap-socratic 2.0.1-fact-driven`  
+> 版本：`static-dap-socratic 2.0.2-isolation`  
 > 触发词：`基于静态工具与dap联合`
 
 ---

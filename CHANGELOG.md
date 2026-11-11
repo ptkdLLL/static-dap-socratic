@@ -1,3 +1,9 @@
+## 2.0.2-isolation — 2026-11-11
+
+- Remove the stage table and stage names from the installed plugin README.
+- Skill remains an activation stub; stage content is injected one stage at a time.
+- No code behavior changes.
+
 ## 2.0.1-fact-driven — 2026-11-11
 
 - Public Chinese name: 事实驱动编程.

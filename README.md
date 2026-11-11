@@ -3,7 +3,7 @@
 给 AI 编程助手用的阶段式事实/证据工作流：把复杂任务拆成六步，一次只做一步；每一步交一份报告，插件再发下一步。
 
 - 插件 ID：`static-dap-socratic`（保持不变，避免破坏安装与 Skill 引用）
-- 版本：`2.0.1-fact-driven`
+- 版本：`2.0.2-isolation`
 - 配套 Skill：`plugin/static-dap-socratic/skills/static-dap-socratic/SKILL.md`
 - 许可证：MIT
 
