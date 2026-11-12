@@ -5,10 +5,25 @@
 本插件不包含、也不安装 MCP 服务。它依赖外部事实工具：
 
 - `codebase_memory` MCP：代码索引、符号、调用关系、数据形状；
+- `cscope`：C/C++ 调用者/被调用者/引用，含 static 函数；
+- `clang` / `clang++`：C/C++ AST dump，用于函数/变量/类型边界和声明/实现核验；
 - DAP MCP：实际运行值、线程、分支、生命周期；
 - Python 3 + ZCode 插件系统。
 
-缺 `codebase_memory`：静态证据只剩 grep/读文件；缺 DAP：运行时证据只能靠日志/测试/探针，相关项必须标 `UNVERIFIED`；两者都缺：只能当阶段提示器用，不能称为事实驱动。
+**只有 `codebase_memory` 不够。** 它对普通符号很强，但 C++ 的嵌套类、重载、条件编译/多构建配置有已知长尾缺口；C/C++ 任务还应安装 `cscope` 与 `clang/clang++` 做交叉验证。`SCIP` / Joern / CodeGraph 可选，但不能替代 cscope/AST 的边界核验。
+
+缺 `codebase_memory`：静态证据只剩 grep/读文件；缺 DAP：运行时证据只能靠日志/测试/探针，相关项必须标 `UNVERIFIED`；C/C++ 任务缺 cscope/clang：复杂符号只能靠图或读码，报告应写明未做交叉验证。两者都缺：只能当阶段提示器用，不能称为事实驱动。
+
+最小检查：
+
+```bash
+command -v cscope
+clang --version
+# 以及 codebase_memory MCP 的 index_repository / search_graph 可调用
+# 以及 DAP MCP 的 dap.capabilities / dap.start 可调用
+```
+
+实验记录：[S1 符号探索实验](docs/s1-symbol-exploration-experiment.md)。
 
 
 ## 1. Recommended: add this repository as a local marketplace

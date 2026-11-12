@@ -3,8 +3,9 @@
 > 给 AI 编程助手用的“阶段任务书 + 阶段报告”工具  
 > 版本：`static-dap-socratic 2.0.8-case-study`  
 > 触发词：`基于静态工具与dap联合`  
-> 前置条件：`codebase_memory` MCP + DAP MCP；插件本身不生产事实。  
-> DAP 规范、底层依赖与当前限制：[docs/dap-spec.md](dap-spec.md)
+> 前置条件：`codebase_memory` MCP + DAP MCP；C/C++ 任务另需 `cscope` + `clang/clang++`（codebase_memory 有嵌套类/重载/条件编译长尾缺口）。  
+> DAP 规范、底层依赖与当前限制：[docs/dap-spec.md](dap-spec.md)  
+> S1 符号探索实验与静态工具组合：[docs/s1-symbol-exploration-experiment.md](s1-symbol-exploration-experiment.md)
 
 ---
 

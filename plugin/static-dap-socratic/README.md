@@ -17,11 +17,16 @@
 ## 依赖（必须）
 
 - `codebase_memory` MCP：提供代码索引、符号、调用关系、数据形状；
+- `cscope`：C/C++ 调用者/被调用者/引用，含 static 函数；
+- `clang` / `clang++`：C/C++ AST dump，用于函数/变量/类型边界和声明/实现核验；
 - DAP MCP：提供实际运行值、线程、分支、生命周期；
-- DAP 规范、底层依赖与当前限制：https://github.com/ptkdLLL/static-dap-socratic/blob/main/docs/dap-spec.md
 - Python 3 + ZCode 插件 hooks。
 
-插件不包含、也不安装这些 MCP 服务；没有它们，工作流只剩阶段提示，不能提供事实约束。
+**只有 `codebase_memory` 不够。** 它对普通符号很强，但 C++ 的嵌套类、重载、条件编译/多构建配置有已知长尾缺口；C/C++ 任务应同时安装 `cscope` 与 `clang/clang++` 做交叉验证。`SCIP` / Joern / CodeGraph 可选，不能替代 cscope/AST。
+
+插件不包含、也不安装这些 MCP 服务；没有它们，工作流只剩阶段提示，不能提供事实约束。DAP 规范与限制：https://github.com/ptkdLLL/static-dap-socratic/blob/main/docs/dap-spec.md
+
+S1 符号探索实验与静态工具组合：https://github.com/ptkdLLL/static-dap-socratic/blob/main/docs/s1-symbol-exploration-experiment.md
 
 ## 工作方式
 

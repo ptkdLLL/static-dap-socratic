@@ -14,10 +14,26 @@
 | 能力 | 用途 | 缺失后果 |
 |---|---|---|
 | `codebase_memory` MCP | 全局代码索引、符号、调用关系、数据形状 | 只能靠 grep/读文件，容易把全局问题看成局部片段 |
+| `cscope` | C/C++ 调用者/被调用者/引用，含 static 函数 | C/C++ 调用链只能靠图或读码；嵌套类/重载/宏场景缺少交叉验证 |
+| `clang` / `clang++` | C/C++ AST dump：函数/变量/类型边界、声明与实现 | C/C++ 符号边界和声明/实现差异容易看错 |
+| `SCIP` / Joern / CodeGraph（可选） | 补充语义索引 | 可选；不能替代 cscope/AST 的边界核验 |
 | DAP MCP | 调试器：实际运行值、线程、分支、生命周期 | 运行时契约只能靠日志/测试/探针，相关结论必须标 `UNVERIFIED` |
 | Python 3 + ZCode 插件系统 | 运行 hook、handoff、报告归档 | 插件无法加载 |
 
-最小检查：能调用 `codebase_memory.index_repository` / `search_graph`，能调用 `dap.capabilities` / `dap.start`。缺一个，先配置 MCP，再激活。
+**只有 `codebase_memory` 不够。** 它对普通函数/类方法很强，但 C++ 有已知长尾缺口：嵌套类 `Outer::Inner::method` 可能没有节点、重载可能按 QN 合并、条件编译/多构建配置可能只索引一个分支。C/C++ 任务应同时安装 `cscope` 与 `clang/clang++`，用它们做调用关系和符号边界的交叉验证；不是替代 `codebase_memory`，而是补盲。
+
+最小检查：
+
+```bash
+# MCP：index_repository / search_graph 可调用
+# MCP：dap.capabilities / dap.start 可调用
+command -v cscope
+clang --version
+```
+
+缺 `codebase_memory`：静态证据只剩 grep/读文件；缺 DAP：运行时证据只能靠日志/测试/探针，相关项必须标 `UNVERIFIED`；C/C++ 任务缺 cscope/clang：复杂符号只能靠图或读码，报告应写明未做交叉验证。
+
+实验记录：[S1 符号探索实验](docs/s1-symbol-exploration-experiment.md)。
 
 DAP 的具体能力契约、底层依赖库（CodeLLDB/LLDB、debugpy、Node Inspector/CDP、原生 JDWP、netcoredbg）、当前实现状态和已知限制（尤其 Android/ART/JDWP 断点限制）见 **[docs/dap-spec.md](docs/dap-spec.md)**。
 
@@ -119,6 +135,7 @@ python3 <plugin-root>/scripts/handoff.py --report REPORT-xxx.md --token <current
 - [两次真实任务的脱敏案例](docs/field-notes-two-tasks.md)
 - [DAP 设计规范与当前限制](docs/dap-spec.md)
 - [实战案例：PDF 子系统级修复（脱敏）](docs/case-study-pdf-subsystem.md)
+- [S1 符号探索实验：增强注入是否改善找符号](docs/s1-symbol-exploration-experiment.md)
 
 ## 许可证
 
