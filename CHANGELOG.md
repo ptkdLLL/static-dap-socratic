@@ -1,3 +1,9 @@
+## Unreleased
+
+- Add `docs/s1-symbol-exploration-experiment.md`: a desensitized S1 symbol-exploration experiment comparing the original S1 prompt with a small symbol-query discipline addition.
+- Document that `codebase_memory` alone is not enough for C/C++: add `cscope` and `clang/clang++` prerequisites on the homepage, INSTALL, introduction, and plugin README.
+- No code behavior changes.
+
 ## 2.0.8-case-study — 2026-11-11
 
 - Add a desensitized real-task case study: PDF subsystem repair, with methodology summary, flow, and report screenshots on the homepage.
