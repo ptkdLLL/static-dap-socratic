@@ -1,5 +1,7 @@
 ## Unreleased
 
+- Add `docs/fact-driven-programming.md`: a methodology paper (research draft) formalizing Fact-Driven Programming, the six-stage workflow, the distinction between topology constraints / process gates / outcome verification, and the two preliminary studies.
+- Link the paper from the README documentation index and the introduction header.
 - Add `docs/s1-symbol-exploration-experiment.md`: a desensitized S1 symbol-exploration experiment comparing the original S1 prompt with a small symbol-query discipline addition.
 - Document that `codebase_memory` alone is not enough for C/C++: add `cscope` and `clang/clang++` prerequisites on the homepage, INSTALL, introduction, and plugin README.
 - No code behavior changes.
