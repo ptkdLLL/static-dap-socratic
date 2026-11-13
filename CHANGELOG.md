@@ -1,6 +1,7 @@
 ## Unreleased
 
 - Add `docs/risk-identification-and-experiment-conversion.md`: a desensitized methodological review of autonomous research on major blockers, selective experiment conversion, CoT reuse, and independent blind audits.
+- Expand the review with the value of proactively fixing non-critical bugs and the reality that fixes redistribute risk through shared mechanisms rather than eliminating all bugs.
 - Link the review from the README documentation index and the introduction header.
 - Add `docs/fact-driven-programming.md`: a methodology paper (research draft) formalizing Fact-Driven Programming, the six-stage workflow, the distinction between topology constraints / process gates / outcome verification, and the two preliminary studies.
 - Link the paper from the README documentation index and the introduction header.
