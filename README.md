@@ -137,6 +137,7 @@ python3 <plugin-root>/scripts/handoff.py --report REPORT-xxx.md --token <current
 - [实战案例：PDF 子系统级修复（脱敏）](docs/case-study-pdf-subsystem.md)
 - [S1 符号探索实验：增强注入是否改善找符号](docs/s1-symbol-exploration-experiment.md)
 - [方法论论文：事实驱动编程（研究讨论稿）](docs/fact-driven-programming.md)
+- [检讨：风险识别与实验转化的分离](docs/risk-identification-and-experiment-conversion.md)
 
 ## 许可证
 

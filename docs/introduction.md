@@ -6,7 +6,8 @@
 > 前置条件：`codebase_memory` MCP + DAP MCP；C/C++ 任务另需 `cscope` + `clang/clang++`（codebase_memory 有嵌套类/重载/条件编译长尾缺口）。  
 > DAP 规范、底层依赖与当前限制：[docs/dap-spec.md](dap-spec.md)  
 > S1 符号探索实验与静态工具组合：[docs/s1-symbol-exploration-experiment.md](s1-symbol-exploration-experiment.md)  
-> 方法论论文（研究讨论稿）：[docs/fact-driven-programming.md](fact-driven-programming.md)
+> 方法论论文（研究讨论稿）：[docs/fact-driven-programming.md](fact-driven-programming.md)  
+> 风险识别与实验转化检讨：[docs/risk-identification-and-experiment-conversion.md](risk-identification-and-experiment-conversion.md)
 
 ---
 
