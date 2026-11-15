@@ -135,7 +135,7 @@ python3 <plugin-root>/scripts/handoff.py --report REPORT-xxx.md --token <current
 - [两次真实任务的脱敏案例](docs/field-notes-two-tasks.md)
 - [DAP 设计规范与当前限制](docs/dap-spec.md)
 - [实战案例：PDF 子系统级修复（脱敏）](docs/case-study-pdf-subsystem.md)
-- [研究记录：量化小模型能否产生介入式因果轨迹（脱敏）](docs/q2-quantized-model-field-notes.md)
+- [研究论文：量化小模型中的介入式因果（研究讨论稿）](docs/q2-quantized-model-field-notes.md)
 - [S1 符号探索实验：增强注入是否改善找符号](docs/s1-symbol-exploration-experiment.md)
 - [方法论论文：事实驱动编程（研究讨论稿）](docs/fact-driven-programming.md)
 - [检讨：风险识别与实验转化的分离](docs/risk-identification-and-experiment-conversion.md)

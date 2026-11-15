@@ -2,6 +2,7 @@
 
 - Add `docs/q2-quantized-model-field-notes.md`: a desensitized research note on a local Q2-quantized model, prompt iteration, attention externalization, blind-grep failure modes, and one successful interventional S2 trajectory; link it from the README documentation index and the introduction header.
 - Clarify in the same note that the problematic PDF/EPUB version was not built with FDP: an agent self-archaeologized prior successful workflows, generated a plugin, and performed tool use under quality-gate supervision.
+- Restructure the Q2 note into an academic-style paper: abstract, introduction, related work, study design, two studies, case analysis, discussion, threats to validity, and conclusion.
 - Add `docs/risk-identification-and-experiment-conversion.md`: a desensitized methodological review of autonomous research on major blockers, selective experiment conversion, CoT reuse, and independent blind audits.
 - Expand the review with the value of proactively fixing non-critical bugs and the reality that fixes redistribute risk through shared mechanisms rather than eliminating all bugs.
 - Link the review from the README documentation index and the introduction header.
