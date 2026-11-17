@@ -1,5 +1,7 @@
 ## Unreleased
 
+- Add `docs/fact-driven-programming-no-quality-gates.md`: a research draft (v0.1) formalizing Fact-Driven Programming as requirement–implementation coevolution without semantic quality gates; link it from the README documentation index and the introduction header.
+- Normalize the new paper's math delimiters to GitHub-rendered `$...$` / `$$...$$`.
 - Add `docs/q2-quantized-model-field-notes.md`: a desensitized research note on a local Q2-quantized model, prompt iteration, attention externalization, blind-grep failure modes, and one successful interventional S2 trajectory; link it from the README documentation index and the introduction header.
 - Clarify in the same note that the problematic PDF/EPUB version was not built with FDP: an agent self-archaeologized prior successful workflows, generated a plugin, and performed tool use under quality-gate supervision.
 - Restructure the Q2 note into an academic-style paper: abstract, introduction, related work, study design, two studies, case analysis, discussion, threats to validity, and conclusion.

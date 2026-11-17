@@ -7,6 +7,7 @@
 > DAP 规范、底层依赖与当前限制：[docs/dap-spec.md](dap-spec.md)  
 > S1 符号探索实验与静态工具组合：[docs/s1-symbol-exploration-experiment.md](s1-symbol-exploration-experiment.md)  
 > 方法论论文（研究讨论稿）：[docs/fact-driven-programming.md](fact-driven-programming.md)  
+> 需求—实现共演化的无质量门禁方法（讨论稿 v0.1）：[docs/fact-driven-programming-no-quality-gates.md](fact-driven-programming-no-quality-gates.md)  
 > 风险识别与实验转化检讨：[docs/risk-identification-and-experiment-conversion.md](risk-identification-and-experiment-conversion.md)
 > 量化小模型中的介入式因果（研究讨论稿）：[docs/q2-quantized-model-field-notes.md](q2-quantized-model-field-notes.md)
 

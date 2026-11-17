@@ -138,6 +138,7 @@ python3 <plugin-root>/scripts/handoff.py --report REPORT-xxx.md --token <current
 - [研究论文：量化小模型中的介入式因果（研究讨论稿）](docs/q2-quantized-model-field-notes.md)
 - [S1 符号探索实验：增强注入是否改善找符号](docs/s1-symbol-exploration-experiment.md)
 - [方法论论文：事实驱动编程（研究讨论稿）](docs/fact-driven-programming.md)
+- [方法论论文：事实驱动编程——无质量门禁的需求—实现共演化（讨论稿 v0.1）](docs/fact-driven-programming-no-quality-gates.md)
 - [检讨：风险识别与实验转化的分离](docs/risk-identification-and-experiment-conversion.md)
 
 ## 许可证
